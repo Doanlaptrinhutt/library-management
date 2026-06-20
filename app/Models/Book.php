@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Models;
-
+use App\Models\Borrow;
 use Illuminate\Database\Eloquent\Model;
 
 class Book extends Model
@@ -13,4 +13,8 @@ class Book extends Model
 	'quantity',
 	'description',
     ];
+    public function borrows()
+    {
+	return $this->hasMany(Borrow::class);
+    }
 }
